@@ -9,11 +9,16 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const path = require('path');
 
+// Read Swagger JSON
 const swaggerDocument = JSON.parse(fs.readFileSync(path.join(__dirname, 'public/swagger.json'), 'utf8'));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// Serve Swagger UI
+app.use('/api-docs', swaggerUi.serve, (req, res, next) => {
+  req.swaggerDoc = swaggerDocument;
+  return swaggerUi.setup(swaggerDocument)(req, res, next);
+});
 
-// Serve raw Swagger JSON (for frontend Swagger UI)
+// Serve raw JSON
 app.get('/swagger.json', (req, res) => {
   res.json(swaggerDocument);
 });
