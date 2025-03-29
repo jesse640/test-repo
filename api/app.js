@@ -8,6 +8,8 @@ const port = 3000;
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
