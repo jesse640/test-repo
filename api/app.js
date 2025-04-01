@@ -12,8 +12,8 @@ const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
 
 // Serve Swagger UI
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use('/api-docs', serveStatic(path.join(__dirname, 'node_modules/swagger-ui-dist')));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use('/api-docs', swaggerUi.);
 
 
 
@@ -23,8 +23,8 @@ app.get('/', (req, res) => {
 });
 
 
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 
 module.exports = app;
