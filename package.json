@@ -15,7 +15,8 @@
     "express": "^4.21.2",
     "nodemon": "^3.1.9",
     "serve-static": "^2.2.0",
-    "swagger-ui-express": "^5.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
     "yamljs": "^0.3.0"
   }
 }

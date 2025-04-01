@@ -17,7 +17,7 @@
     },
     {
       "src": "/api/public/swagger.yaml",
-      "dest": "/swagger.yaml"
+      "dest": "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css"
     }
   ]
 }
