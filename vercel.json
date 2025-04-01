@@ -16,7 +16,7 @@
       "dest": "api/app.js"
     },
     {
-      "src": "/swagger.yaml",
+      "src": "/api/public/swagger.yaml",
       "dest": "/swagger.yaml"
     }
   ]
