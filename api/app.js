@@ -2,18 +2,16 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const path = require('path');
-const serveStatic = require('serve-static'); // ✅ Ensure static files are served
 
 
 const port = 3000;
 
 const app = express();
-const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
+const swaggerDocument = YAML.load(path.join(__dirname, '/public/swagger.yaml'));
 
 
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-// app.use('/api-docs', swaggerUi.);
 
 
 
