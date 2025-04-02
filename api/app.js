@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path');
 const YAML = require('yamljs')
+const validator = require('xsd-schema-validator')
 
 const app = express();
 
@@ -13,8 +14,18 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Basic route to check API is working
 app.get('/', (req, res) => {
-  res.send('Hello World from Express!');
+  res.send('Hello joshua!');
 });
+
+app.post('/validate', (req, res) => {
+
+  const xml = req.body
+
+
+
+
+
+})
 
 
 app.listen(3000, '0.0.0.0', () => {
